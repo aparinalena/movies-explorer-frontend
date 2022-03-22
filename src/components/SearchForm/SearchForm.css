@@ -17,9 +17,10 @@
 
 .search__input-container {
   box-sizing: border-box;
+  padding: 6px;
   border-radius: 50px;
   display: flex;
-  max-width: 1140px;
+  background-color: #2f2f2f;
   margin-bottom: 42px;
 }
 
@@ -28,17 +29,21 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
-  padding: 0 0 0 22px;
+  margin: 0 46px 0 10px;
+  padding: 0 6px;
   border-radius: 20px;
   background-color: #2f2f2f;
   border: none;
-  outline: none;
+  outline-color: #4285F4;
   color: white;
 }
 
 .search__button {
+  display: flex;
+  align-items: center;
   border: none;
   height: 34px;
+  width: 34px;
   border-radius: 30px;
   margin-left: auto;
   opacity: 1;
