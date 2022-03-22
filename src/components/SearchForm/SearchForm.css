@@ -1,0 +1,136 @@
+.search {
+  font-family: Inter, Arial, sans-serif;
+  color: white;
+  padding: 60px 70px 0;
+}
+
+.search__container {
+  margin: 0 auto;
+  max-width: 1140px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #424242;
+}
+
+.search__form {
+  max-width: 1140px;
+}
+
+.search__input-container {
+  box-sizing: border-box;
+  border-radius: 50px;
+  display: flex;
+  max-width: 1140px;
+  margin-bottom: 42px;
+}
+
+.search__input {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 18px;
+  padding: 0 0 0 22px;
+  border-radius: 20px;
+  background-color: #2f2f2f;
+  border: none;
+  outline: none;
+  color: white;
+}
+
+.search__button {
+  border: none;
+  height: 34px;
+  border-radius: 30px;
+  margin-left: auto;
+  opacity: 1;
+  background-color: #4285F4;
+}
+
+.search__button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.search__shortfilms {
+  width: 167px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto 70px;
+}
+
+.search__shortfilms_title {
+  align-self: center;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.search__shortfilms_button {
+  width: 36px;
+  height: 16px;
+  align-self: center;
+  background-color: #2be080;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  padding: 2px;
+}
+
+.search__shortfilms_button:hover {
+  cursor: pointer;
+}
+
+.search__shortfilms_circle {
+  width: 12px;
+  height: 12px;
+  margin-left: auto;
+  background-color: #fff;
+  border: none;
+  border-radius: 50px;
+  align-self: center;
+}
+
+._on-green {
+  background-color: #2be080;
+}
+
+._on-circle {
+  margin-right: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .search {
+    padding: 80px 30px 0;
+  }
+
+  .search__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search__shortfilms {
+    margin: 0 auto 51px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .search {
+    padding: 80px 14px 10px;
+  }
+
+  .search__container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px auto 50px;
+  }
+
+  .search__input-container {
+    margin-bottom: 45px;
+  }
+
+  .search__form {
+    min-width: 300px;
+    margin: 0 auto;
+  }
+}
