@@ -80,6 +80,21 @@
   line-height: 12px;
   color: #ee3465;
 }
+.register__input_type_error {
+  color: #ee3465;
+}
+
+.register__error-text_type_disabled {
+  user-select: none;
+}
+
+.register__submit-error {
+  width: 100%;
+  margin: auto auto 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #ee3465;
+}
 
 .register__submit {
   display: flex;
@@ -88,13 +103,18 @@
   user-select: none;
 }
 
+.register__submit-button_type_disable {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
 .register__submit-button {
   height: 45px;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  background-color: #4285F4;
+  background-color: #4285f4;
   color: #fff;
   border-radius: 3px;
   border: none;
@@ -116,7 +136,7 @@
   font-size: 14px;
   line-height: 17px;
   background-color: #202020;
-  color: #4285F4;
+  color: #4285f4;
   border: none;
   text-decoration: none;
 }

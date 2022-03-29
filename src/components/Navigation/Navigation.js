@@ -1,37 +1,38 @@
-import { useState, useEffect, useCallback } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./Navigation.css";
 import profile from "../../images/profile.svg";
 import Burger from "../Burger/Burger";
 import SlideMenu from "../SlideMenu/SlideMenu";
+import { MEDIUM } from "../../utils/constants";
 
 function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= MEDIUM);
 
   const setActive = ({ isActive }) =>
     isActive
       ? "navigation__link navigation__link_active link-opacity"
       : "navigation__link link-opacity";
 
-  const updateWidth = useCallback(() => {
-    const newWidth = window.innerWidth <= 768;
+  const updateWidth = React.useCallback(() => {
+    const newWidth = window.innerWidth <= MEDIUM;
     if (newWidth !== isMobile) {
       setIsMobile(newWidth);
     }
   }, [isMobile]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     window.addEventListener("resize", updateWidth);
     return () => window.removeEventListener("resize", updateWidth);
   }, [updateWidth]);
 
-  function openBurger() {
-    setIsOpen(true);
-  }
-
   function closeAllPopups() {
     setIsOpen(false);
+  }
+
+  function openBurger() {
+    setIsOpen(true);
   }
 
   return (

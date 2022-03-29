@@ -72,6 +72,10 @@
   outline: none;
 }
 
+.login__input_type_error {
+  color: #ee3465;
+}
+
 .login__error-text {
   margin: 10px 0 0 0;
   font-style: normal;
@@ -81,10 +85,22 @@
   color: #ee3465;
 }
 
+.login__error-text_type_disabled {
+  user-select: none;
+}
+
 .login__submit {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.login__submit-error {
+  width: 100%;
+  margin: auto auto 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #ee3465;
 }
 
 .login__submit-button {
@@ -93,11 +109,16 @@
   font-weight: 500;
   font-size: 14px;
   line-height: 17px;
-  background-color: #4285F4;
+  background-color: #4285f4;
   color: #fff;
   border-radius: 3px;
   border: none;
   user-select: none;
+}
+
+.login__submit-button_type_disable {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .login__redirect {
@@ -116,7 +137,7 @@
   font-size: 14px;
   line-height: 17px;
   background-color: #202020;
-  color: #4285F4;
+  color: #4285f4;
   border: none;
   text-decoration: none;
 }
