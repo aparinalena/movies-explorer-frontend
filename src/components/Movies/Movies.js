@@ -28,7 +28,7 @@ function Movies(props) {
       <div>
         <section className="movies">
           <Header loggedIn={loggedIn} />
-          {isPreloader && <Preloader />}
+          {isPreloader && <Preloader /> }
           <SearchForm
             handleFilter={handleFilter}
             setSearchValue={setMoviesInputValue}

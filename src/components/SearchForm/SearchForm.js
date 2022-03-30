@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./SearchForm.css";
 import find from "../../images/find.svg";
 import Checkbox from "../Checkbox/Checkbox";
@@ -35,14 +34,6 @@ function SearchForm(props) {
         <div className="search__shortfilms">
           <p className="search__shortfilms_title">Короткометражки</p>
           <Checkbox tumbler={tumbler} setTumbler={setTumbler} />
-          {/* <div
-            onClick={handleOn}
-            className={`search__shortfilms_button ${isOn ? "_on-green" : ""}`}
-          >
-            <div
-              className={`search__shortfilms_circle ${isOn ? "_on-circle" : ""}`}
-            ></div>
-          </div> */}
         </div>
       </div>
     </section>

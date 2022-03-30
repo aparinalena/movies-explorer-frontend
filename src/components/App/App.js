@@ -37,6 +37,7 @@ function App() {
   const [moviesTumbler, setMoviesTumbler] = React.useState(false);
   const [savedMoviesTumbler, setSavedMoviesTumbler] = React.useState(false);
   const [successSearch, setSuccessSearch] = React.useState(false);
+  const [message, setMessage] = React.useState(null);
 
   const [amountShowCards, setAmountShowCards] = React.useState(
     window.innerWidth > LARGE ? AmountShowCardsAtLarge : AmountShowCardsAtMedium
@@ -116,6 +117,11 @@ function App() {
         console.log(err);
       });
   }, []);
+
+  function showMessage(message) {
+    setMessage(message);
+    setTimeout(() => setMessage(""), 10000);
+  }
 
   function handleLoggedOut(evt) {
     evt.preventDefault();
@@ -206,6 +212,7 @@ function App() {
         setCurrentUser(response);
         setErrorMessage("");
         setEditProfile(false);
+        showMessage("Изменения сохранены");
       })
       .catch((err) => {
         setErrorMessage(err.message);
@@ -289,6 +296,7 @@ function App() {
                   errorMessage={errorMessage}
                   handleLoggedOut={handleLoggedOut}
                   handleUpdateUser={handleUpdateUser}
+                  message={message}
                 />
               </ProtectedRoute>
             }

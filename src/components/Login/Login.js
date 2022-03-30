@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { Link } from "react-router-dom";
 import "./Login.css";
 import logo from "../../images/logo.svg";
@@ -25,7 +25,7 @@ function Login(props) {
             <img
               src={logo}
               className="login__logo link-opacity"
-              alt="Логотип"
+              alt="логотип"
             ></img>
           </Link>
           <h2 className="login__title">Рады видеть!</h2>
@@ -43,6 +43,7 @@ function Login(props) {
             autoComplete="off"
             onChange={handleChange}
             disabled={blockInput && "disabled"}
+            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
             required
           />
           <span
@@ -50,7 +51,7 @@ function Login(props) {
               !errors.email && `login__error-text_type_disabled`
             }`}
           >
-            {errors.email ? errors.email : "⁣"}
+            {errors.email ? errors.email : ""}
           </span>
           <p className="login__text">Пароль</p>
           <input
@@ -74,7 +75,9 @@ function Login(props) {
           </span>
         </div>
         <div className="login__submit">
-          {errorMessage && <p className="login__submit-error">{errorMessage}</p>}
+          {errorMessage && (
+            <p className="login__submit-error">{errorMessage}</p>
+          )}
           <button
             type="submit"
             className={`login__submit-button ${

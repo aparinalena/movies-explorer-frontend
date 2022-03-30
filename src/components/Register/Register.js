@@ -50,7 +50,7 @@ function Register(props) {
               !errors.name && `register__error-text_type_disabled`
             }`}
           >
-            {errors.name ? errors.name : "⁣"}
+            {errors.name ? errors.name : ""}
           </span>
           <p className="register__text">E-mail</p>
           <input
@@ -61,8 +61,10 @@ function Register(props) {
             name="email"
             minLength="2"
             maxLength="30"
+            autoComplete="off"
             onChange={handleChange}
             disabled={blockInput && "disabled"}
+            pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
             required
           />
           <span
@@ -70,7 +72,7 @@ function Register(props) {
               !errors.email && `register__error-text_type_disabled`
             }`}
           >
-            {errors.email ? errors.email : "⁣"}
+            {errors.email ? errors.email : ""}
           </span>
           <p className="register__text">Пароль</p>
           <input
@@ -90,7 +92,7 @@ function Register(props) {
               !errors.password && `register__error-text_type_disabled`
             }`}
           >
-            {errors.password ? errors.password : "⁣"}
+            {errors.password ? errors.password : ""}
           </span>
         </div>
         <div className="register__submit">

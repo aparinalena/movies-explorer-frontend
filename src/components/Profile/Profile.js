@@ -16,7 +16,7 @@ function Profile(props) {
   } = props;
 
   const { values, handleChange, errors, isValid } = Validation();
-  const { email, name } = React.useContext(CurrentUserContext);
+  const currentUser = React.useContext(CurrentUserContext);
 
   function handleEdit(e) {
     e.preventDefault();
@@ -27,17 +27,24 @@ function Profile(props) {
     evt.preventDefault();
 
     handleUpdateUser(
-      values.name ? values.name : name,
-      values.email ? values.email : email
+      values.name ? values.name : currentUser.name,
+      values.email ? values.email : currentUser.email
     );
   }
+
+  const [hasChanges, setHasChanges] = React.useState(false);
+  React.useEffect(() => {
+    setHasChanges(
+      values.name !== currentUser.name || values.email !== currentUser.email
+    );
+  }, [values.name, values.email, currentUser.name, currentUser.email]);
 
   return (
     <>
       <Header loggedIn={loggedIn} />
       <section className="profile">
         <form className="profile__form">
-          <h2 className="profile__title">Привет, {name}!</h2>
+          <h2 className="profile__title">Привет, {currentUser.name}!</h2>
           <div className="profile__container">
             <span
               className={`profile__error-text ${
@@ -58,7 +65,7 @@ function Profile(props) {
                 maxLength="30"
                 autoComplete="off"
                 onChange={handleChange}
-                defaultValue={name}
+                defaultValue={currentUser.name}
                 disabled={(!editProfile || blockInput) && "disabled"}
                 required
               />
@@ -74,8 +81,9 @@ function Profile(props) {
                 minLength="2"
                 maxLength="30"
                 onChange={handleChange}
-                defaultValue={email}
+                defaultValue={currentUser.email}
                 disabled={(!editProfile || blockInput) && "disabled"}
+                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
                 required
               />
             </div>
@@ -88,6 +96,7 @@ function Profile(props) {
             </span>
           </div>
           <div className="profile__exit">
+            <span className="profile__success">{props.message}</span>
             {!editProfile ? (
               <button
                 type="submit"
@@ -102,18 +111,15 @@ function Profile(props) {
                   <p className="profile__submit-error">{errorMessage}</p>
                 )}
                 <button
-                  type="submit"
-                  className={`profile__submit-button ${
-                    !isValid || (values.name === name && values.email === email)
-                      ? "profile__submit-button_type_disable"
-                      : "link-opacity"
-                  }`}
-                  disabled={
-                    !isValid || (values.name === name && values.email === email)
-                      ? "disabled"
-                      : ""
-                  }
                   onClick={handleSubmit}
+                  type="submit"
+                  disabled={!hasChanges || !isValid}
+                  className={`profile__submit-button
+          ${
+            !isValid || !hasChanges
+              ? "profile__submit-button_type_disable"
+              : "link-opacity"
+          }`}
                 >
                   Сохранить
                 </button>

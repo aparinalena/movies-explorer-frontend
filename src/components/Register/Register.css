@@ -103,11 +103,6 @@
   user-select: none;
 }
 
-.register__submit-button_type_disable {
-  background-color: #f8f8f8;
-  color: #c2c2c2;
-}
-
 .register__submit-button {
   height: 45px;
   font-style: normal;
@@ -118,6 +113,11 @@
   color: #fff;
   border-radius: 3px;
   border: none;
+}
+
+.register__submit-button_type_disable {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .register__redirect {

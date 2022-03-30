@@ -3,7 +3,7 @@ export class MoviesApi {
       this._url = options.url;
       this._headers = options.headers;
     }
-    // метод обработки ответа сервера
+
     _getResponseData(res) {
       if (res.ok) {
         return res.json();

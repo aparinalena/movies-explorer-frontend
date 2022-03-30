@@ -96,7 +96,6 @@
 }
 
 .profile__button {
-  font-style: normal;
   font-weight: normal;
   font-size: 13px;
   line-height: 16px;
@@ -144,6 +143,15 @@
 .profile__submit-button_type_disable {
   background-color: #f8f8f8;
   color: #c2c2c2;
+}
+
+.profile__success {
+  margin: 0 auto 30px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  color: #4285f4;
+  border: none;
 }
 
 @media screen and (max-width: 900px) {
